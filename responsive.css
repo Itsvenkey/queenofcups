@@ -1,0 +1,137 @@
+/* responsive.css */
+
+/* Make hero text and content stack properly on smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column !important;
+      padding-top: 5rem !important;
+      text-align: center;
+    }
+  
+    .hero-section .md\\:w-1\\2 {
+      width: 100% !important;
+    }
+  
+    .hero-section .text-5xl,
+    .hero-section .md\\:text-6xl {
+      font-size: 2rem !important;
+      line-height: 2.5rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem !important;
+      padding: 0 1rem;
+    }
+  
+    .hero-section .flex.flex-wrap.gap-4 {
+      justify-content: center;
+    }
+  
+    .coffee-scene {
+      transform: scale(0.85);
+    }
+  }
+  
+  /* Adjust navbar spacing and stack menu */
+  @media (max-width: 768px) {
+    nav .md\\:flex {
+      display: none !important;
+    }
+  
+    nav .mobile-nav-links {
+      display: flex !important;
+      flex-direction: column;
+      background: white;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+  }
+  
+  /* Prevent overflow from wide content */
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+  }
+  
+  /* responsive.css */
+
+/* General mobile styles */
+@media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+  
+    .hero-section {
+      flex-direction: column !important;
+      align-items: center !important;
+      padding: 5rem 1rem 2rem !important;
+      text-align: center;
+      height: 100vh;
+    }
+  
+    .hero-section .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  
+    .hero-section h1 {
+      font-size: 1.5rem !important;
+      line-height: 2.5rem !important;
+      word-break: break-word;
+    }
+  
+    .hero-section p {
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
+      margin: 0 auto 1.5rem;
+      max-width: 65%;
+      word-break: break-word;
+    }
+  
+    .hero-section .flex.flex-wrap.gap-4 {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .hero-section .coffee-scene {
+        transform: scale(0.9);
+        margin-top: -3rem;
+        max-width: 100%;
+        display: block;
+        position: static;
+        z-index: 2;
+        width: initial;
+      }
+      
+  
+    .reveal-buttons,
+    .reveal-stats {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .counter-item {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+    .floating-beans {
+        pointer-events: none;
+        left:-20px !important;
+        top:-50px;
+        z-index: -100;
+      }
+    .floating-bean{
+        z-index: -100;
+    }
+      
+  }
+  

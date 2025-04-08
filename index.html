@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+<link rel="stylesheet" href="responsive.css">
+
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 @keyframes steam {
@@ -303,25 +305,12 @@ Contact
 </div>
 <div class="flex flex-wrap gap-4 reveal-buttons">
 <a href="#menu" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1 hover-lift glow-on-hover">View Menu</a>
-<a href="#reservation" class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1 hover-lift glow-on-hover">Book a Table</a>
+<a href="#reservation" class=" border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1 hover-lift glow-on-hover ">Book a Table</a>
 </div>
 <div class="mt-12 flex items-center space-x-6 reveal-stats">
 <div class="flex items-center space-x-2 counter-item glass-effect p-3 rounded-lg hover-3d">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full bounce-animation">
 <i class="ri-cup-line ri-lg text-primary"></i>
-</div>
-<div>
-<h4 class="text-2xl font-bold text-primary counter" data-target="5000">0</h4>
-<p class="text-sm text-gray-600">Cups Daily</p>
-</div>
-</div>
-<div class="flex items-center space-x-2 counter-item glass-effect p-3 rounded-lg hover-3d">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full bounce-animation" style="animation-delay: 0.5s;">
-<i class="ri-user-smile-line ri-lg text-primary"></i>
-</div>
-<div>
-<h4 class="text-2xl font-bold text-primary counter" data-target="20000">0</h4>
-<p class="text-sm text-gray-600">Happy Customers</p>
 </div>
 </div>
 </div>
@@ -344,13 +333,13 @@ Contact
 <div class="steam-3d steam-5"></div>
 </div>
 <div class="floating-beans">
-<div class="floating-bean bean-1"></div>
+<!-- <div class="floating-bean bean-1"></div> -->
 <div class="floating-bean bean-2"></div>
 <div class="floating-bean bean-3"></div>
 <div class="floating-bean bean-4"></div>
-<div class="floating-bean bean-5"></div>
+<!-- <div class="floating-bean bean-5"></div> -->
 <div class="floating-bean bean-6"></div>
-<div class="floating-bean bean-7 spin-3d"></div>
+<!-- <div class="floating-bean bean-7 spin-3d"></div> -->
 <div class="floating-bean bean-8 spin-3d"></div>
 </div>
 <div class="coffee-circle-bg pulse-slow shimmer-effect"></div>
@@ -651,6 +640,8 @@ position: absolute;
 width: 100%;
 height: 100%;
 transform-style: preserve-3d;
+top:-290px;
+left:-80px
 }
 .floating-bean {
 position: absolute;
