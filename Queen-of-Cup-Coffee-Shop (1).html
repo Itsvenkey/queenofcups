@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queen of Cup - Specialty Coffee in Ahmedabad</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#85120D',secondary:'#DCD1BF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+@keyframes steam {
+0% { opacity: 0; transform: translateY(0) scale(1); }
+50% { opacity: 0.7; transform: translateY(-15px) scale(1.2); }
+100% { opacity: 0; transform: translateY(-30px) scale(0.8); }
+}
+@keyframes rotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+0% { transform: translateX(-50px); opacity: 0; }
+100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+@keyframes float {
+0% { transform: translateY(0) rotate(45deg); }
+50% { transform: translateY(-20px) rotate(45deg); }
+100% { transform: translateY(0) rotate(45deg); }
+}
+@keyframes liquidWave {
+0% { transform: translateY(0) rotate(0); }
+50% { transform: translateY(-5px) rotate(1deg); }
+100% { transform: translateY(0) rotate(0); }
+}
+@keyframes shimmer {
+0% { background-position: -200% 0; }
+100% { background-position: 200% 0; }
+}
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+}
+@keyframes spin3D {
+0% { transform: rotate3d(1, 1, 1, 0deg); }
+100% { transform: rotate3d(1, 1, 1, 360deg); }
+}
+@keyframes gradientFlow {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+@keyframes floatRotate {
+0% { transform: translateY(0) rotate(0deg); }
+25% { transform: translateY(-15px) rotate(5deg); }
+50% { transform: translateY(0) rotate(0deg); }
+75% { transform: translateY(15px) rotate(-5deg); }
+100% { transform: translateY(0) rotate(0deg); }
+}
+.steam {
+position: absolute;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.7);
+animation: steam 2s infinite ease-out;
+top: 10px;
+}
+.steam:nth-child(1) { left: 50%; animation-delay: 0.2s; }
+.steam:nth-child(2) { left: 55%; animation-delay: 0.8s; }
+.steam:nth-child(3) { left: 45%; animation-delay: 0.5s; }
+.rotate-animation {
+animation: rotate 15s linear infinite;
+}
+.fade-in {
+animation: fadeIn 1s ease forwards;
+}
+.slide-in {
+animation: slideIn 0.8s ease forwards;
+}
+.pulse-animation {
+animation: pulse 2s infinite;
+}
+.shimmer-effect {
+background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.4), rgba(255,255,255,0));
+background-size: 200% 100%;
+animation: shimmer 3s infinite linear;
+}
+.bounce-animation {
+animation: bounce 3s infinite ease-in-out;
+}
+.float-rotate {
+animation: floatRotate 6s infinite ease-in-out;
+}
+.coffee-bean {
+position: absolute;
+width: 20px;
+height: 30px;
+background-color: #5D3A1A;
+border-radius: 50%;
+transform: rotate(45deg);
+z-index: -1;
+}
+.coffee-bean::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 60%;
+height: 80%;
+background-color: #3A2312;
+border-radius: 50%;
+transform: translate(-50%, -50%);
+}
+.hero-section {
+background: linear-gradient(135deg, #DCD1BF 0%, #E8E1D4 100%);
+position: relative;
+overflow: hidden;
+}
+.menu-section {
+background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://public.readdy.ai/ai/img_res/bf72ac9d8bf7dc6689f01e8574f4b777.jpg');
+background-size: cover;
+background-position: center;
+}
+.about-section {
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('https://public.readdy.ai/ai/img_res/943caca57fc302fd2f26cab36135c8e5.jpg');
+background-size: cover;
+background-position: center;
+}
+.coffee-cup {
+position: relative;
+width: 180px;
+height: 220px;
+background-color: white;
+border-radius: 0 0 100px 100px;
+overflow: hidden;
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+transform-origin: center bottom;
+animation: pulse 6s infinite ease-in-out;
+}
+.coffee-cup::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 30px;
+background-color: #DCD1BF;
+border-radius: 15px 15px 0 0;
+}
+.coffee-liquid {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 70%;
+background: linear-gradient(to bottom, #85120D, #5D3A1A);
+border-radius: 0 0 100px 100px;
+animation: liquidWave 4s infinite ease-in-out;
+}
+.coffee-handle {
+position: absolute;
+top: 60px;
+right: -40px;
+width: 40px;
+height: 70px;
+border: 10px solid white;
+border-left: none;
+border-radius: 0 35px 35px 0;
+box-shadow: 5px 0 15px rgba(0,0,0,0.05);
+}
+.gradient-text {
+background: linear-gradient(90deg, #85120D, #b52e28, #85120D);
+background-size: 200% auto;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+animation: gradientFlow 3s linear infinite;
+}
+.glass-effect {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.hover-lift {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+body {
+font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display', serif;
+}
+.section-divider {
+height: 100px;
+position: relative;
+overflow: hidden;
+}
+.section-divider::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 100%;
+background: linear-gradient(135deg, transparent 49.5%, white 50%);
+}
+.floating-elements {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+pointer-events: none;
+z-index: 1;
+}
+.floating-element {
+position: absolute;
+border-radius: 50%;
+background: rgba(133, 18, 13, 0.1);
+animation: floatRotate 8s infinite ease-in-out;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg fixed w-full z-50">
+<div class="container mx-auto px-6 py-3 flex justify-between items-center">
+<a href="#" class="font-['Pacifico'] text-primary text-3xl gradient-text">Queen of Cup</a>
+<div class="hidden md:flex space-x-8">
+<a href="#" class="text-gray-800 hover:text-primary transition-all duration-300 relative group" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+Home
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#menu" class="text-primary hover:text-primary transition-all duration-300 relative group">
+Menu
+<span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300"></span>
+</a>
+<a href="#about" class="text-gray-800 hover:text-primary transition-all duration-300 relative group">
+About
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#gallery" class="text-gray-800 hover:text-primary transition-all duration-300 relative group">
+Gallery
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#contact" class="text-gray-800 hover:text-primary transition-all duration-300 relative group">
+Contact
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300">
+<i class="ri-search-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 relative">
+<i class="ri-shopping-bag-line ri-lg"></i>
+<span class="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">3</span>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center hover:bg-primary/10 rounded-full transition-all duration-300">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section min-h-screen flex items-center pt-20 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/30 to-transparent z-0"></div>
+<div class="floating-elements">
+<div class="floating-element" style="width: 80px; height: 80px; top: 15%; left: 10%; animation-delay: 0s;"></div>
+<div class="floating-element" style="width: 60px; height: 60px; top: 25%; left: 85%; animation-delay: 1s;"></div>
+<div class="floating-element" style="width: 40px; height: 40px; top: 75%; left: 20%; animation-delay: 2s;"></div>
+<div class="floating-element" style="width: 100px; height: 100px; top: 60%; left: 80%; animation-delay: 3s;"></div>
+<div class="floating-element" style="width: 50px; height: 50px; top: 40%; left: 40%; animation-delay: 4s;"></div>
+</div>
+<div class="coffee-particles absolute inset-0 z-10"></div>
+<div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center relative z-20">
+<div class="md:w-1/2 mb-10 md:mb-0">
+<div class="reveal-text overflow-hidden mb-6">
+<h1 class="text-5xl md:text-6xl font-bold text-primary slide-up typewriter-effect">Experience the <span class="gradient-text">Royal Taste</span> of Coffee</h1>
+</div>
+<div class="reveal-text overflow-hidden mb-8">
+<p class="text-lg text-gray-700 slide-up delay-200">Discover Ahmedabad's finest specialty coffee at Queen of Cup. Expertly crafted brews, artisanal pastries, and a warm atmosphere that makes every visit special.</p>
+</div>
+<div class="flex flex-wrap gap-4 reveal-buttons">
+<a href="#menu" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1 hover-lift glow-on-hover">View Menu</a>
+<a href="#reservation" class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1 hover-lift glow-on-hover">Book a Table</a>
+</div>
+<div class="mt-12 flex items-center space-x-6 reveal-stats">
+<div class="flex items-center space-x-2 counter-item glass-effect p-3 rounded-lg hover-3d">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full bounce-animation">
+<i class="ri-cup-line ri-lg text-primary"></i>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-primary counter" data-target="5000">0</h4>
+<p class="text-sm text-gray-600">Cups Daily</p>
+</div>
+</div>
+<div class="flex items-center space-x-2 counter-item glass-effect p-3 rounded-lg hover-3d">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full bounce-animation" style="animation-delay: 0.5s;">
+<i class="ri-user-smile-line ri-lg text-primary"></i>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-primary counter" data-target="20000">0</h4>
+<p class="text-sm text-gray-600">Happy Customers</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative flex justify-center">
+<div class="coffee-scene relative">
+<div class="coffee-cup-3d float-rotate">
+<div class="coffee-cup-top"></div>
+<div class="coffee-liquid-3d">
+<div class="coffee-ripple"></div>
+<div class="coffee-ripple ripple-2"></div>
+<div class="coffee-ripple ripple-3"></div>
+</div>
+<div class="coffee-handle-3d"></div>
+<div class="coffee-saucer"></div>
+<div class="steam-3d steam-1"></div>
+<div class="steam-3d steam-2"></div>
+<div class="steam-3d steam-3"></div>
+<div class="steam-3d steam-4"></div>
+<div class="steam-3d steam-5"></div>
+</div>
+<div class="floating-beans">
+<div class="floating-bean bean-1"></div>
+<div class="floating-bean bean-2"></div>
+<div class="floating-bean bean-3"></div>
+<div class="floating-bean bean-4"></div>
+<div class="floating-bean bean-5"></div>
+<div class="floating-bean bean-6"></div>
+<div class="floating-bean bean-7 spin-3d"></div>
+<div class="floating-bean bean-8 spin-3d"></div>
+</div>
+<div class="coffee-circle-bg pulse-slow shimmer-effect"></div>
+<div class="glow-orb"></div>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-10 left-0 w-full h-20 bg-white" style="border-radius: 100% 100% 0 0; z-index: 30;"></div>
+<style>
+.coffee-cup-top {
+position: absolute;
+top: -10px;
+left: 0;
+width: 100%;
+height: 30px;
+background-color: #f5f5f5;
+border-radius: 100px 100px 0 0;
+z-index: 2;
+}
+.coffee-saucer {
+position: absolute;
+bottom: -30px;
+left: -20px;
+width: 220px;
+height: 20px;
+background-color: #f5f5f5;
+border-radius: 50%;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+z-index: -1;
+}
+@keyframes slideUp {
+0% { transform: translateY(100%); opacity: 0; }
+100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeInScale {
+0% { transform: scale(0.8); opacity: 0; }
+100% { transform: scale(1); opacity: 1; }
+}
+@keyframes floatBean {
+0% { transform: translate(0, 0) rotate(45deg); }
+25% { transform: translate(10px, -15px) rotate(65deg); }
+50% { transform: translate(20px, 0) rotate(85deg); }
+75% { transform: translate(10px, 15px) rotate(65deg); }
+100% { transform: translate(0, 0) rotate(45deg); }
+}
+@keyframes ripple {
+0% { transform: scale(0.8); opacity: 0.5; }
+50% { transform: scale(1.2); opacity: 0.3; }
+100% { transform: scale(0.8); opacity: 0.5; }
+}
+@keyframes steam3d {
+0% { opacity: 0; transform: translateY(0) scale(1) translateX(0) rotate(0deg); }
+30% { opacity: 0.7; transform: translateY(-20px) scale(1.5) translateX(5px) rotate(10deg); }
+60% { opacity: 0.4; transform: translateY(-40px) scale(2) translateX(-5px) rotate(-10deg); }
+100% { opacity: 0; transform: translateY(-60px) scale(1) translateX(0) rotate(0deg); }
+}
+@keyframes pulseSlow {
+0% { transform: scale(1); opacity: 0.3; }
+50% { transform: scale(1.1); opacity: 0.2; }
+100% { transform: scale(1); opacity: 0.3; }
+}
+@keyframes counterAnimation {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes particleFloat {
+0% { transform: translateY(0) rotate(0); }
+100% { transform: translateY(-1000px) rotate(360deg); }
+}
+@keyframes loopAnimation {
+0% { transform: translateX(0); }
+100% { transform: translateX(-100%); }
+}
+@keyframes blinkCursor {
+0%, 100% { border-color: transparent; }
+50% { border-color: #85120D; }
+}
+@keyframes typewriter {
+from { width: 0; }
+to { width: 100%; }
+}
+@keyframes fadeInOut {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 1; }
+}
+@keyframes rotateY {
+0% { transform: rotateY(0deg); }
+100% { transform: rotateY(360deg); }
+}
+@keyframes wave {
+0%, 100% { transform: translateY(0); }
+25% { transform: translateY(-15px); }
+75% { transform: translateY(15px); }
+}
+@keyframes glowPulse {
+0%, 100% { box-shadow: 0 0 5px rgba(133, 18, 13, 0.5); }
+50% { box-shadow: 0 0 20px rgba(133, 18, 13, 0.8), 0 0 30px rgba(133, 18, 13, 0.6); }
+}
+@keyframes orbGlow {
+0%, 100% { opacity: 0.3; transform: scale(0.8); }
+50% { opacity: 0.7; transform: scale(1.2); }
+}
+@keyframes spin3D {
+0% { transform: rotate3d(1, 1, 1, 0deg); }
+100% { transform: rotate3d(1, 1, 1, 360deg); }
+}
+@keyframes typewriterEffect {
+0% { width: 0; }
+100% { width: 100%; }
+}
+@keyframes hover3D {
+0% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+25% { transform: perspective(1000px) rotateX(3deg) rotateY(3deg); }
+50% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+75% { transform: perspective(1000px) rotateX(-3deg) rotateY(-3deg); }
+100% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+}
+.text-gradient {
+background: linear-gradient(90deg, #85120D, #b52e28);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+}
+.slide-up {
+animation: slideUp 0.8s ease forwards;
+}
+.delay-200 {
+animation-delay: 0.2s;
+}
+.reveal-buttons {
+opacity: 0;
+animation: fadeInScale 0.8s ease forwards 0.4s;
+}
+.reveal-stats {
+opacity: 0;
+animation: fadeInScale 0.8s ease forwards 0.6s;
+}
+.counter-item {
+opacity: 0;
+transform: translateY(20px);
+animation: counterAnimation 0.5s ease forwards;
+}
+.counter-item:nth-child(1) {
+animation-delay: 0.7s;
+}
+.counter-item:nth-child(2) {
+animation-delay: 0.9s;
+}
+.coffee-scene {
+position: relative;
+width: 300px;
+height: 300px;
+perspective: 1000px;
+transform-style: preserve-3d;
+}
+.coffee-cup-3d {
+position: relative;
+width: 180px;
+height: 180px;
+background-color: #f5f5f5;
+border-radius: 100px 100px 60px 60px;
+overflow: visible;
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+transform: rotateX(10deg) rotateY(-20deg);
+transform-style: preserve-3d;
+animation: fadeInScale 1s ease forwards 0.2s;
+opacity: 0;
+margin-bottom: 40px;
+}
+.coffee-liquid-3d {
+position: absolute;
+bottom: 20px;
+left: 15px;
+width: calc(100% - 30px);
+height: 60%;
+background: linear-gradient(to bottom, #85120D, #5D3A1A);
+border-radius: 50px 50px 30px 30px;
+transform-style: preserve-3d;
+box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+}
+.coffee-ripple {
+position: absolute;
+top: 20%;
+left: 25%;
+width: 50%;
+height: 50%;
+border: 2px solid rgba(255,255,255,0.2);
+border-radius: 50%;
+animation: ripple 4s infinite ease-in-out;
+}
+.coffee-handle-3d {
+position: absolute;
+top: 50px;
+right: -40px;
+width: 40px;
+height: 70px;
+border: 10px solid #f5f5f5;
+border-left: none;
+border-radius: 0 35px 35px 0;
+box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+.steam-3d {
+position: absolute;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.8);
+filter: blur(5px);
+animation: steam3d 3s infinite ease-out;
+}
+.steam-1 {
+top: 10px;
+left: 50%;
+animation-delay: 0.2s;
+}
+.steam-2 {
+top: 10px;
+left: 60%;
+animation-delay: 0.8s;
+}
+.steam-3 {
+top: 10px;
+left: 40%;
+animation-delay: 0.5s;
+}
+.steam-4 {
+top: 5px;
+left: 45%;
+animation-delay: 1.2s;
+}
+.steam-5 {
+top: 5px;
+left: 55%;
+animation-delay: 1.5s;
+}
+.glow-on-hover {
+position: relative;
+overflow: hidden;
+}
+.glow-on-hover:after {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.glow-on-hover:hover:after {
+opacity: 1;
+}
+.glow-on-hover:hover {
+animation: glowPulse 1.5s infinite;
+}
+.glow-orb {
+position: absolute;
+width: 100px;
+height: 100px;
+background: radial-gradient(circle, rgba(133,18,13,0.3) 0%, rgba(133,18,13,0) 70%);
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: -1;
+animation: orbGlow 4s infinite ease-in-out;
+filter: blur(10px);
+}
+.spin-3d {
+animation: spin3D 8s infinite linear !important;
+}
+.typewriter-effect {
+overflow: hidden;
+border-right: 3px solid transparent;
+white-space: nowrap;
+animation: typewriterEffect 3s steps(40) 1s forwards, blinkCursor 0.75s step-end infinite;
+width: 0;
+}
+.hover-3d {
+transition: transform 0.3s ease;
+transform-style: preserve-3d;
+animation: hover3D 6s infinite ease-in-out;
+}
+.ripple-2 {
+top: 30%;
+left: 35%;
+animation-delay: 1s;
+}
+.ripple-3 {
+top: 40%;
+left: 45%;
+animation-delay: 2s;
+}
+.floating-beans {
+position: absolute;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+}
+.floating-bean {
+position: absolute;
+width: 25px;
+height: 35px;
+background-color: #5D3A1A;
+border-radius: 50%;
+transform: rotate(45deg);
+animation: floatBean 8s infinite ease-in-out;
+box-shadow: 0 0 10px rgba(93, 58, 26, 0.3);
+}
+.floating-bean::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 60%;
+height: 80%;
+background-color: #3A2312;
+border-radius: 50%;
+transform: translate(-50%, -50%);
+}
+.bean-1 {
+top: 20%;
+left: 10%;
+animation-delay: 0s;
+}
+.bean-2 {
+top: 70%;
+right: 10%;
+animation-delay: 1s;
+}
+.bean-3 {
+top: 40%;
+right: 20%;
+animation-delay: 2s;
+}
+.bean-4 {
+bottom: 30%;
+left: 20%;
+animation-delay: 3s;
+}
+.bean-5 {
+top: 30%;
+right: 30%;
+animation-delay: 4s;
+}
+.bean-6 {
+bottom: 20%;
+left: 40%;
+animation-delay: 5s;
+}
+.bean-7 {
+top: 15%;
+right: 15%;
+animation-delay: 2.5s;
+}
+.bean-8 {
+bottom: 15%;
+right: 25%;
+animation-delay: 3.5s;
+}
+.coffee-circle-bg {
+position: absolute;
+width: 250px;
+height: 250px;
+background: radial-gradient(circle, rgba(220,209,191,0.5) 0%, rgba(220,209,191,0) 70%);
+border-radius: 50%;
+z-index: -1;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.pulse-slow {
+animation: pulseSlow 4s infinite ease-in-out;
+}
+.coffee-particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.coffee-particles::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background-image: radial-gradient(circle, #5D3A1A 1px, transparent 1px);
+background-size: 20px 20px;
+opacity: 0.05;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+counters.forEach(counter => {
+const target = +counter.getAttribute('data-target');
+const increment = target / speed;
+const updateCount = () => {
+const count = +counter.innerText;
+if (count < target) {
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCount, 1);
+} else {
+counter.innerText = new Intl.NumberFormat().format(target);
+}
+};
+setTimeout(() => {
+updateCount();
+}, 1000);
+});
+// Create coffee particles
+const particlesContainer = document.querySelector('.coffee-particles');
+for (let i = 0; i < 80; i++) {
+const particle = document.createElement('div');
+particle.style.position = 'absolute';
+particle.style.width = `${Math.random() * 5 + 2}px`;
+particle.style.height = particle.style.width;
+particle.style.background = '#5D3A1A';
+particle.style.borderRadius = '50%';
+particle.style.opacity = `${Math.random() * 0.2}`;
+particle.style.left = `${Math.random() * 100}%`;
+particle.style.top = `${Math.random() * 100 + 100}%`;
+particle.style.animation = `particleFloat ${Math.random() * 15 + 10}s linear infinite`;
+particle.style.animationDelay = `${Math.random() * 5}s`;
+particle.style.boxShadow = '0 0 5px rgba(93, 58, 26, 0.2)';
+particle.style.filter = 'blur(1px)';
+particlesContainer.appendChild(particle);
+}
+// 3D hover effect for cards
+const hoverCards = document.querySelectorAll('.hover-3d');
+hoverCards.forEach(card => {
+card.addEventListener('mousemove', (e) => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+const centerX = rect.width / 2;
+const centerY = rect.height / 2;
+const angleX = (y - centerY) / 20;
+const angleY = (centerX - x) / 20;
+card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+});
+});
+// Glow effect for buttons
+const glowButtons = document.querySelectorAll('.glow-on-hover');
+glowButtons.forEach(button => {
+button.addEventListener('mousemove', (e) => {
+const rect = button.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+button.style.setProperty('--x-pos', `${x}px`);
+button.style.setProperty('--y-pos', `${y}px`);
+});
+});
+});
+</script>
+</section>
+
+<script>
+// Simple animation on scroll
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+const slideElements = document.querySelectorAll('.slide-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, { threshold: 0.1 });
+fadeElements.forEach(el => {
+el.style.opacity = '0';
+el.style.transform = 'translateY(20px)';
+el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+observer.observe(el);
+});
+slideElements.forEach(el => {
+el.style.opacity = '0';
+el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+observer.observe(el);
+});
+// Coffee cup animation
+const addSteamAnimation = () => {
+const steamElements = document.querySelectorAll('.steam');
+steamElements.forEach((steam, index) => {
+steam.style.animationDelay = `${index * 0.3}s`;
+});
+};
+// Coffee beans floating animation
+const createFloatingBeans = () => {
+const container = document.querySelector('.hero-section');
+for (let i = 0; i < 20; i++) {
+const bean = document.createElement('div');
+bean.classList.add('coffee-bean');
+// Random position
+bean.style.left = `${Math.random() * 100}%`;
+bean.style.top = `${Math.random() * 100}%`;
+// Random size
+const size = 10 + Math.random() * 15;
+bean.style.width = `${size}px`;
+bean.style.height = `${size * 1.5}px`;
+// Random rotation
+bean.style.transform = `rotate(${Math.random() * 360}deg)`;
+// Animation
+bean.style.animation = `float ${3 + Math.random() * 4}s infinite ease-in-out, rotate ${10 + Math.random() * 10}s infinite linear`;
+bean.style.animationDelay = `${Math.random() * 5}s`;
+container.appendChild(bean);
+}
+};
+addSteamAnimation();
+createFloatingBeans();
+});
+</script>
+</body>
+</html>
